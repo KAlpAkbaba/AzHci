@@ -73,17 +73,17 @@ Initialize-AksHciNode # Important: Run on each node!!!!!
 $vSwitchName = Get-Option "Get-VMSwitch" "Name"
 
 #k8s node networking pools
-$k8sNodeIpPoolStart = "192.168.177.2"   # Kubernetes node VM IP pool - used to allocate IP addresses to Kubernetes nodes virtual machines to enable communication between Kubernetes nodes
-$k8sNodeIpPoolEnd = "192.168.177.20"    # will limit the # of Kubernetes nodes you can use
-$vipPoolStart = "192.168.177.21"        # Virtual IP pool - used to allocate IP addresses to the Kubernetes cluster API server.
-$vipPoolEnd = "192.168.177.40"          # https://docs.microsoft.com/en-us/azure-stack/aks-hci/concepts-node-networking
+$k8sNodeIpPoolStart = "192.168.245.115"   # Kubernetes node VM IP pool - used to allocate IP addresses to Kubernetes nodes virtual machines to enable communication between Kubernetes nodes
+$k8sNodeIpPoolEnd = "192.168.245.120"    # will limit the # of Kubernetes nodes you can use
+$vipPoolStart = "192.168.245.121"        # Virtual IP pool - used to allocate IP addresses to the Kubernetes cluster API server.
+$vipPoolEnd = "192.168.245.125"          # https://docs.microsoft.com/en-us/azure-stack/aks-hci/concepts-node-networking
 
-$ipAddressPrefix = "192.168.177.0/24" 
-$gateway = "192.168.177.1"        # your router to get to the internet
-$dnsServers = "192.168.177.200"   # "IP1,IP2"     # this is a domain controller (with DNS) role - as a computer object is created in AD -> you can precreate this in AD and specify it in  'Set-AksHciConfig' -> https://learn.microsoft.com/en-us/azure-stack/aks-hci/prestage-cluster-service-host-create#step-4-configure-your-deployment-with-the-prestaged-cluster-service-objects-and-dns-records
-$cloudservicecidr = "192.168.177.203/24"  #a free IP to be assigned for the clustered generic service that will be created.
+$ipAddressPrefix = "192.168.245.0/24" 
+$gateway = "192.168.245.1"        # your router to get to the internet
+$dnsServers = "192.168.202.11","192.168.210.98"   # "IP1,IP2"     # this is a domain controller (with DNS) role - as a computer object is created in AD -> you can precreate this in AD and specify it in  'Set-AksHciConfig' -> https://learn.microsoft.com/en-us/azure-stack/aks-hci/prestage-cluster-service-host-create#step-4-configure-your-deployment-with-the-prestaged-cluster-service-objects-and-dns-records
+$cloudservicecidr = "192.168.245.114/24"  #a free IP to be assigned for the clustered generic service that will be created.
 #$vlanid = 1234 # not using it in my environment but you may want to
-$csv_path = "c:\clusterstorage\CSV1"
+$csv_path = "c:\clusterstorage\Volume01"
 
 #static IP
 $vnet = New-AksHciNetworkSetting -name myaksnetwork -vSwitchName $vSwitchName `
