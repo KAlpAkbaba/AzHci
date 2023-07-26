@@ -168,15 +168,15 @@ enable-akshciarcconnection -name $aksHciClusterName
     
     #make sure you have the 
     # make sure your node networking pool settings differ from above - otherwhise you might have duplicate IPs!!!
-    $arcbridge_k8sNodeIpPoolStart = "192.168.177.41"   # Kubernetes node VM IP pool - used to allocate IP addresses to Kubernetes nodes virtual machines to enable communication between Kubernetes nodes
-    $arcbridge_k8sNodeIpPoolEnd = "192.168.177.50"    # will limit the # of Kubernetes nodes you can use
-    $arcbridge_vipPoolStart = "192.168.177.51"        # Virtual IP pool - used to allocate IP addresses to the Kubernetes cluster API server.
-    $arcbridge_vipPoolEnd = "192.168.177.59"          # https://docs.microsoft.com/en-us/azure-stack/hci/manage/deploy-arc-resource-bridge-using-command-line
+    $arcbridge_k8sNodeIpPoolStart = "192.168.245.214"   # Kubernetes node VM IP pool - used to allocate IP addresses to Kubernetes nodes virtual machines to enable communication between Kubernetes nodes
+    $arcbridge_k8sNodeIpPoolEnd = "192.168.245.223"    # will limit the # of Kubernetes nodes you can use
+    $arcbridge_vipPoolStart = "192.168.245.224"        # Virtual IP pool - used to allocate IP addresses to the Kubernetes cluster API server.
+    $arcbridge_vipPoolEnd = "192.168.245.234"          # https://docs.microsoft.com/en-us/azure-stack/hci/manage/deploy-arc-resource-bridge-using-command-line
     
-    $ipAddressPrefix = "192.168.177.0/24"
-    $gateway = "192.168.177.1"
-    $dnsServers = "192.168.177.200"
-    $controlPlaneIP = "192.168.177.204"
+    $ipAddressPrefix = "192.168.245.0/24"
+    $gateway = "192.168.245.1"
+    $dnsServers = "192.168.210.98"
+    $controlPlaneIP = "192.168.245.213"
   
     
     Initialize-MocNode
