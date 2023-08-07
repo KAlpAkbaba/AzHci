@@ -140,6 +140,24 @@ enable-akshciarcconnection -name $aksHciClusterName
   [Environment]::SetEnvironmentVariable("Path", $env:Path,"User")
 #endregion
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #region Snippet 8: Prepare Azure Resource Bridge installation
     Write-Host -ForegroundColor green "Prepare Azure Resource Bridge installation"
     # https://docs.microsoft.com/en-us/azure-stack/hci/manage/deploy-arc-resource-bridge-using-command-line
